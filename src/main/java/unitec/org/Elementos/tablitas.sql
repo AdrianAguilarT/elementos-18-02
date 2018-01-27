@@ -3,3 +3,5 @@ CREATE TABLE mensajitos(
     titulo VARCHAR(40),
     cuerpo VARCHAR(180)
 )
+
+SELECT * FROM mensajitos
