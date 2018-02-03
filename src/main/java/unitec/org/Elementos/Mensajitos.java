@@ -5,10 +5,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
+@Entity // Especifica que la clase es una Entidad (se asocia a una tabla de una BD Relacional)
 public class Mensajitos {
-    @Id
-    @GeneratedValue
+    @Id //Especifica la PK de una entidad
+    @GeneratedValue // Genera un valor automático
     Integer id;
     String titulo, cuerpo;
 

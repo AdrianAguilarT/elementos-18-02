@@ -12,27 +12,31 @@ public class ElementosApplication implements CommandLineRunner{
         @Autowired RepositorioMensajitos repoMensa;
 	public static void main(String[] args) {
 		SpringApplication.run(ElementosApplication.class, args);
+                
 	}
 
     @Override
     public void run(String... strings) throws Exception {
-        Mensajitos n=new Mensajitos("primero","Mi primer mensajito con Hibernate");
-        //repoMensa.save(n);
+        // INSERT
+        //Mensajitos primerInsert=new Mensajitos("primero","Mi primer mensajito con Hibernate"); // Datos
+        //repoMensa.save(primerInsert); // Insert
         
-        //Buscar Todos
-        ArrayList<Mensajitos> mensajitos = (ArrayList<Mensajitos>)repoMensa.findAll();
-        for (Mensajitos mensa: mensajitos){
-            System.out.println(mensa.getTitulo());
-        }
+        // SELECT * FROM Mensajitos...
+        //ArrayList<Mensajitos> mensajitos = (ArrayList<Mensajitos>)repoMensa.findAll();
+        //for (Mensajitos mensa: mensajitos){
+        //System.out.println(mensa.getTitulo());
+        //}
         
-        // Ahora probaremos de nuevo buscar por ID
+        // SELECT * FROM Mensajitos WHERE ID = ...
         Mensajitos m1 = repoMensa.findOne(1);
-        System.out.println(m1.getTitulo());
+        //System.out.println(m1.getTitulo());
         
-        // Actualización
+        // UPDATE 
         //repoMensa.save(new Mensajitos(1,"otro","malo"));
         
-        //Borrar
-        repoMensa.delete(1);
+        // DELETE
+        //repoMensa.delete(1);
     }
+    
+
 }
